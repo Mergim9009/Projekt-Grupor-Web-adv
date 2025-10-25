@@ -1,5 +1,5 @@
 
-// reactive per 
+// reactive per mobile dhe ty
 document.addEventListener('DOMContentLoaded', function () {
   const toggle = document.querySelector('.nav-toggle');
   const nav = document.getElementById('main-nav');
