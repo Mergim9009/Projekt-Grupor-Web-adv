@@ -229,7 +229,6 @@ a {
     justify-content: space-between
 }
 
-/* Responsive */
 @media (max-width:900px) {
     .grid-3 {
         grid-template-columns: repeat(2, 1fr)
