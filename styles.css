@@ -1,0 +1,263 @@
+:root {
+    --bg: #0f1724;
+    --card: #0b1220;
+    --muted: #94a3b8;
+    --accent: #ff6b6b;
+    --accent-2: #4f46e5;
+    --white: #ffffff;
+    --radius: 10px;
+    font-size: 16px;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    color: var(--white);
+    background: linear-gradient(180deg, #071129 0%, #06111e 100%)
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem
+}
+
+/* Header */
+.site-header {
+    background: transparent;
+    position: sticky;
+    top: 0;
+    z-index: 50
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: var(--white)
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: 0;
+    font-size: 1.5rem;
+    color: var(--white)
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem
+}
+
+.main-nav a {
+    color: var(--muted);
+    padding: .5rem .75rem;
+    border-radius: 8px
+}
+
+.main-nav a:hover {
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.03)
+}
+
+/* Hero */
+.hero {
+    padding: 4rem 0;
+    background: linear-gradient(90deg, rgba(79, 70, 229, 0.08), rgba(255, 107, 107, 0.06));
+}
+
+.hero-inner {
+    display: flex;
+    gap: 2rem;
+    align-items: center
+}
+
+.hero-content {
+    flex: 1
+}
+
+.hero-image {
+    flex: 1;
+    height: 300px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5)
+}
+
+.hero h1 {
+    font-size: 2rem;
+    margin: 0 0 .5rem
+}
+
+.hero p {
+    color: var(--muted);
+    margin: 0 0 1rem
+}
+
+.hero-ctas .btn {
+    margin-right: .5rem
+}
+
+/* Grid & cards */
+.grid {
+    display: grid;
+    gap: 1rem
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr)
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1rem;
+    border-radius: 12px
+}
+
+/* Plans */
+.plans .plan {
+    padding: 1rem;
+    border-radius: 12px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    text-align: center
+}
+
+.plan.popular {
+    border: 2px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 6px 18px rgba(79, 70, 229, 0.12)
+}
+
+.price {
+    font-size: 1.5rem;
+    margin: .5rem 0
+}
+
+/* Trainers */
+.trainer .avatar {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #334155, #1e293b);
+    margin-bottom: .75rem
+}
+
+/* Contact */
+.contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 1rem;
+    align-items: start
+}
+
+.join-form label {
+    display: block;
+    margin-top: .5rem;
+    color: var(--muted)
+}
+
+.join-form input,
+.join-form textarea {
+    width: 100%;
+    padding: .6rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    background: transparent;
+    color: var(--white);
+    margin-top: .25rem
+}
+
+.form-msg {
+    margin-top: .5rem;
+    color: var(--accent)
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: .6rem 1rem;
+    border-radius: 8px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--white)
+}
+
+.btn.primary {
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    border: 0
+}
+
+.btn.ghost {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06)
+}
+
+/* Footer */
+.site-footer {
+    padding: 1.25rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.03)
+}
+
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+/* Responsive */
+@media (max-width:900px) {
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .hero-inner {
+        flex-direction: column
+    }
+
+    .hero-image {
+        height: 220px
+    }
+
+    .contact-inner {
+        grid-template-columns: 1fr
+    }
+}
+
+@media (max-width:600px) {
+    .grid-3 {
+        grid-template-columns: 1fr
+    }
+
+    .main-nav {
+        display: none
+    }
+
+    .nav-toggle {
+        display: block
+    }
+}
