@@ -36,3 +36,38 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+// --- Contact Form Functionality ---
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("contactForm");
+    const message = document.getElementById("formMessage");
+    const year = document.getElementById("year");
+
+    // Auto-update footer year
+    if (year) year.textContent = new Date().getFullYear();
+
+    if (form) {
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const name = form.name.value.trim();
+            const email = form.email.value.trim();
+            const msg = form.message.value.trim();
+
+            if (!name || !email || !msg) {
+                message.textContent = "Please fill in all fields.";
+                message.className = "form-message error";
+                return;
+            }
+
+            message.textContent = "Sending...";
+            message.className = "form-message";
+
+            setTimeout(() => {
+                message.textContent = `Thanks, ${name}! We’ll contact you soon.`;
+                message.className = "form-message success";
+                form.reset();
+            }, 1200);
+        });
+    }
+});
+
