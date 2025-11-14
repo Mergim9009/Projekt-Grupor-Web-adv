@@ -217,6 +217,10 @@ body {
 
 .section-text { font-size: var(--fs-6); }
 
+/* Headings on dark sections */
+.bg-dark .h2,
+.bg-dark .h3 { color: var(--white); }
+
 .btn {
   max-width: max-content;
   font-size: var(--fs-6);
@@ -752,11 +756,57 @@ body {
   box-shadow: 0 0 0 3px var(--coquelicot_10);
 }
 
+.workout-form .input-field,
+.workout-form .form-input,
+.workout-form input[type="text"],
+.workout-form input[type="email"],
+.workout-form input[type="password"],
+.workout-form textarea,
+.contact-form .form-input,
+.contact-form .form-textarea,
+.contact-section .form-input,
+.contact-section .form-textarea {
+  background-color: var(--white);
+  color: var(--rich-black-fogra-29-1);
+  border: 1px solid var(--gainsboro);
+  border-radius: var(--radius-8);
+  padding: 12px 14px;
+  width: 100%;
+  transition: var(--transition-1);
+}
+
+.workout-form textarea,
+.contact-form .form-textarea,
+.contact-section .form-textarea { min-height: 120px; resize: vertical; }
+
+.workout-form .input-field:focus,
+.workout-form .form-input:focus,
+.workout-form input[type="text"]:focus,
+.workout-form input[type="email"]:focus,
+.workout-form input[type="password"]:focus,
+.workout-form textarea:focus,
+.contact-form .form-input:focus,
+.contact-form .form-textarea:focus,
+.contact-section .form-input:focus,
+.contact-section .form-textarea:focus {
+  outline: none;
+  border-color: var(--coquelicot);
+  box-shadow: 0 0 0 3px var(--coquelicot_10);
+}
+
 .workout-form .actions { margin-top: 10px; }
 
 .plan-output { margin-top: 10px; }
 
 .plan-output .blog-card { border-color: var(--light-gray); }
+
+.contact-form .form-group { margin-bottom: 14px; }
+
+.workout-form,
+#signin-form,
+#signup-form {
+  backdrop-filter: saturate(1.1);
+}
 
 @media (min-width: 768px) {
   .workout-form .form-grid { grid-template-columns: repeat(2, 1fr); }

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitlife - Sign Up</title>
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600;700;800;900&family=Rubik:wght@400;500;800&display=swap" rel="stylesheet">
+</head>
+<body id="top" data-force-header="true">
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="index.html" class="logo">
+        <ion-icon name="barbell-sharp" aria-hidden="true"></ion-icon>
+        <span class="span">Fitlife</span>
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-sharp" aria-hidden="true"></ion-icon>
+        </button>
+        <ul class="navbar-list">
+          <li><a href="index.html#home" class="navbar-link" data-nav-link>Home</a></li>
+          <li><a href="index.html#about" class="navbar-link" data-nav-link>About Us</a></li>
+          <li><a href="classes.html" class="navbar-link" data-nav-link>Classes</a></li>
+          <li><a href="index.html#blog" class="navbar-link" data-nav-link>Blog</a></li>
+          <li><a href="contact.html" class="navbar-link" data-nav-link>Contact Us</a></li>
+          <li><a href="workout.html" class="navbar-link" data-nav-link>Workout Maker</a></li>
+        </ul>
+      </nav>
+
+      <a href="signin.html" class="btn btn-secondary">Sign In</a>
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <section class="section bg-dark has-bg-image" aria-label="sign up" style="background-image: url('./assets/images/footer-bg.png'); padding-block-start: calc(var(--section-padding) + 140px);">
+        <div class="container" style="max-width: 720px;">
+          <p class="section-subtitle" style="text-align:center;">Create your account</p>
+          <h1 class="h2 section-title text-center">Sign Up</h1>
+          <p class="section-text" style="text-align:center; max-width: 640px; margin: 0 auto 24px;">Join Fitlife to follow classes, generate plans, and track your progress.</p>
+
+          <form id="signup-form" class="workout-form" style="margin: 0 auto;">
+            <div class="form-grid" style="grid-template-columns: 1fr 1fr; gap: 14px;">
+              <div class="form-field" style="grid-column: span 1;">
+                <label for="firstName" class="h3">First Name</label>
+                <input type="text" id="firstName" required class="input-field" placeholder="Jane">
+              </div>
+              <div class="form-field" style="grid-column: span 1;">
+                <label for="lastName" class="h3">Last Name</label>
+                <input type="text" id="lastName" required class="input-field" placeholder="Doe">
+              </div>
+              <div class="form-field" style="grid-column: span 2;">
+                <label for="email" class="h3">Email</label>
+                <input type="email" id="email" required class="input-field" placeholder="you@example.com">
+              </div>
+              <div class="form-field" style="grid-column: span 1;">
+                <label for="password" class="h3">Password</label>
+                <input type="password" id="password" required minlength="6" class="input-field" placeholder="At least 6 characters">
+              </div>
+              <div class="form-field" style="grid-column: span 1;">
+                <label for="confirm" class="h3">Confirm Password</label>
+                <input type="password" id="confirm" required class="input-field" placeholder="Repeat password">
+              </div>
+            </div>
+            <div class="actions" style="margin-top: 20px; display: flex; gap: 12px; align-items:center;">
+              <button type="submit" class="btn btn-primary">Create Account</button>
+              <a class="btn btn-secondary" href="signin.html">I already have an account</a>
+            </div>
+            <p id="signup-help" class="section-text" style="margin-top:10px;"></p>
+          </form>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="section footer-top bg-dark has-bg-image" style="background-image: url('./assets/images/footer-bg.png')">
+      <div class="container">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <ion-icon name="barbell-sharp" aria-hidden="true"></ion-icon>
+            <span class="span">Fitlife</span>
+          </a>
+          <p class="footer-brand-text">Create your account and get started today.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright">
+          &copy; 2025 Fitlife. All Rights Reserved By <a href="#" class="copyright-link">codewithsadee.</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="caret-up-sharp" aria-hidden="true"></ion-icon>
+  </a>
+
+  <script src="./assets/js/script.js" defer></script>
+  <script src="./assets/js/auth.js" defer></script>
+  <script>
+    (function(){
+      const form = document.getElementById('signup-form');
+      const help = document.getElementById('signup-help');
+      if(!form) return;
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const first = document.getElementById('firstName');
+        const last = document.getElementById('lastName');
+        const email = document.getElementById('email');
+        const pass = document.getElementById('password');
+        const confirm = document.getElementById('confirm');
+        if(pass.value.length < 6){ help.textContent = 'Password must be at least 6 characters.'; return; }
+        if(pass.value !== confirm.value){ help.textContent = 'Passwords do not match.'; return; }
+        const user = { first:first.value, last:last.value, email: email.value, ts: Date.now() };
+        localStorage.setItem('fitlife_user', JSON.stringify(user));
+        window.location.href = 'signin.html';
+      });
+    })();
+  </script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
