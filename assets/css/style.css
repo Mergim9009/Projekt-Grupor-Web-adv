@@ -612,6 +612,7 @@ body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  position: relative;
 }
 
 .video-card::before {
@@ -626,6 +627,26 @@ body {
 .video-card .card-title {
   color: var(--white);
   font-size: var(--fs-3);
+}
+
+.cardio-inline-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #000;
+  border-radius: var(--radius-10);
+}
+
+.video-card.playing .card-title,
+.video-card.playing .play-btn,
+.video-card.playing .btn-link {
+  display: none;
+}
+
+.video-card.playing::before {
+  display: none;
 }
 
 .play-btn {
@@ -644,9 +665,106 @@ body {
   100% { box-shadow: 0 0 0 40px transparent; }
 }
 
+.video-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 1000;
+}
 
+.video-modal.active { display: block; }
 
+.video-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
 
+.video-modal-dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--rich-black-fogra-29-1);
+  padding: 0;
+  border-radius: var(--radius-10);
+  box-shadow: var(--shadow-1);
+  max-width: 900px;
+  width: 90vw;
+}
+
+.video-modal-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 32px;
+  color: var(--white);
+  background: transparent;
+  line-height: 1;
+  padding: 6px 10px;
+  z-index: 1;
+}
+
+.video-modal video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  border-radius: var(--radius-10);
+}
+
+/*-----------------------------------*\
+  #WORKOUT MAKER
+\*-----------------------------------*/
+
+.workout-form {
+  background-color: var(--white);
+  border: 1px solid var(--light-gray);
+  border-radius: var(--radius-10);
+  padding: 24px;
+  box-shadow: var(--shadow-1);
+}
+
+.workout-form .form-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.workout-form .form-field label {
+  color: var(--rich-black-fogra-29-1);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.workout-form select {
+  background-color: var(--white);
+  color: var(--rich-black-fogra-29-1);
+  border: 1px solid var(--gainsboro);
+  border-radius: var(--radius-8);
+  padding: 12px 14px;
+  width: 100%;
+  transition: var(--transition-1);
+}
+
+.workout-form select:focus {
+  outline: none;
+  border-color: var(--coquelicot);
+  box-shadow: 0 0 0 3px var(--coquelicot_10);
+}
+
+.workout-form .actions { margin-top: 10px; }
+
+.plan-output { margin-top: 10px; }
+
+.plan-output .blog-card { border-color: var(--light-gray); }
+
+@media (min-width: 768px) {
+  .workout-form .form-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 992px) {
+  .workout-form .form-grid { grid-template-columns: repeat(3, 1fr); }
+}
 
 /*-----------------------------------*\
   #CLASS

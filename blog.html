@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitlife - Blog</title>
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600;700;800;900&family=Rubik:wght@400;500;800&display=swap" rel="stylesheet">
+</head>
+<body id="top" data-force-header="true">
+
+  <header class="header" data-header>
+    <div class="container">
+      <a href="index.html" class="logo">
+        <ion-icon name="barbell-sharp" aria-hidden="true"></ion-icon>
+        <span class="span">Fitlife</span>
+      </a>
+      <nav class="navbar" data-navbar>
+        <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-sharp" aria-hidden="true"></ion-icon>
+        </button>
+        <ul class="navbar-list">
+          <li><a href="index.html#home" class="navbar-link" data-nav-link>Home</a></li>
+          <li><a href="index.html#about" class="navbar-link" data-nav-link>About Us</a></li>
+          <li><a href="index.html#class" class="navbar-link" data-nav-link>Classes</a></li>
+          <li><a href="index.html#blog" class="navbar-link active" data-nav-link>Blog</a></li>
+          <li><a href="contact.html" class="navbar-link" data-nav-link>Contact Us</a></li>
+        </ul>
+      </nav>
+      <a href="workout.html" class="btn btn-secondary">Workout Maker</a>
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <section class="section blog" aria-label="blog">
+        <div class="container">
+          <p class="section-subtitle">Blog</p>
+          <h1 class="h2 section-title" id="post-title">Loading...</h1>
+          <div class="blog-card" style="margin-top: 10px;">
+            <div class="card-banner img-holder" style="--width: 880; --height: 360;">
+              <img id="post-image" src="./assets/images/blog-1.jpg" width="880" height="360" alt="" class="img-cover">
+              <time id="post-date" class="card-meta" datetime="2022-07-07">7 July 2022</time>
+            </div>
+            <div class="card-content">
+              <div id="post-body" class="section-text"></div>
+              <a href="index.html#blog" class="btn-link has-before" style="margin-top: 16px;">Back to Blog Feed</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="section footer-top bg-dark has-bg-image" style="background-image: url('./assets/images/footer-bg.png')">
+      <div class="container">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <ion-icon name="barbell-sharp" aria-hidden="true"></ion-icon>
+            <span class="span">Fitlife</span>
+          </a>
+          <p class="footer-brand-text">Read more articles to level up your fitness.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright">
+          &copy; 2022 Fitlife. All Rights Reserved By <a href="#" class="copyright-link">codewithsadee.</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="caret-up-sharp" aria-hidden="true"></ion-icon>
+  </a>
+
+  <script src="./assets/js/script.js" defer></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="./assets/js/blog.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

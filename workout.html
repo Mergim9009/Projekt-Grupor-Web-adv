@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitlife - Workout Maker</title>
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600;700;800;900&family=Rubik:wght@400;500;800&display=swap" rel="stylesheet">
+</head>
+<body id="top" data-force-header="true">
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="index.html" class="logo">
+        <ion-icon name="barbell-sharp" aria-hidden="true"></ion-icon>
+        <span class="span">Fitlife</span>
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-sharp" aria-hidden="true"></ion-icon>
+        </button>
+        <ul class="navbar-list">
+          <li><a href="index.html#home" class="navbar-link" data-nav-link>Home</a></li>
+          <li><a href="index.html#about" class="navbar-link" data-nav-link>About Us</a></li>
+          <li><a href="index.html#class" class="navbar-link" data-nav-link>Classes</a></li>
+          <li><a href="index.html#blog" class="navbar-link" data-nav-link>Blog</a></li>
+          <li><a href="contact.html" class="navbar-link" data-nav-link>Contact Us</a></li>
+          <li><a href="workout.html" class="navbar-link active" data-nav-link>Workout Maker</a></li>
+        </ul>
+      </nav>
+
+      <a href="#" class="btn btn-secondary">Join Now</a>
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <main>
+    <article>
+
+      <section class="section" aria-label="workout maker">
+        <div class="container">
+
+          <p class="section-subtitle">Tools</p>
+          <h1 class="h2 section-title">Personalized Workout Maker</h1>
+          <p class="section-text">Choose your goal and preferences; we will generate a weekly plan tailored to you.</p>
+
+          <form id="workout-form" class="workout-form" aria-describedby="form-help">
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="goal" class="h3">Primary Goal</label>
+                <select id="goal" required>
+                  <option value="muscle">Build Muscle</option>
+                  <option value="fat_loss">Lose Fat</option>
+                  <option value="endurance">Improve Endurance</option>
+                  <option value="general">General Fitness</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="experience" class="h3">Experience Level</label>
+                <select id="experience" required>
+                  <option value="beginner">Beginner</option>
+                  <option value="intermediate">Intermediate</option>
+                  <option value="advanced">Advanced</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="days" class="h3">Days/Week</label>
+                <select id="days" required>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="equipment" class="h3">Equipment</label>
+                <select id="equipment" required>
+                  <option value="full_gym">Full Gym</option>
+                  <option value="dumbbells">Dumbbells Only</option>
+                  <option value="bands">Bands/Bodyweight</option>
+                  <option value="bodyweight">Bodyweight Only</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="focus" class="h3">Focus Area</label>
+                <select id="focus" required>
+                  <option value="balanced">Balanced</option>
+                  <option value="upper">Upper Body</option>
+                  <option value="lower">Lower Body</option>
+                  <option value="cardio">Cardio</option>
+                  <option value="core">Core</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="duration" class="h3">Session Duration</label>
+                <select id="duration" required>
+                  <option value="30">~30 min</option>
+                  <option value="45">~45 min</option>
+                  <option value="60">~60 min</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="actions" style="margin-top: 20px; display: flex; gap: 12px;">
+              <button type="submit" class="btn btn-primary">Generate Plan</button>
+              <button type="button" id="reset-plan" class="btn btn-secondary">Reset</button>
+            </div>
+
+            <p id="form-help" class="section-text" style="margin-top: 10px;">We’ll create a weekly schedule with exercises, sets, reps, and rest suggestions.</p>
+          </form>
+
+          <section id="plan" class="section" aria-label="generated plan" style="padding-block: 40px 0; display:none;">
+            <h2 class="h2 section-title">Your Weekly Plan</h2>
+            <div id="plan-output" class="plan-output"></div>
+          </section>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="section footer-top bg-dark has-bg-image" style="background-image: url('./assets/images/footer-bg.png')">
+      <div class="container">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <ion-icon name="barbell-sharp" aria-hidden="true"></ion-icon>
+            <span class="span">Fitlife</span>
+          </a>
+          <p class="footer-brand-text">Build your plan and start training smart.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright">
+          &copy; 2022 Fitlife. All Rights Reserved By <a href="#" class="copyright-link">codewithsadee.</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="caret-up-sharp" aria-hidden="true"></ion-icon>
+  </a>
+
+  <script src="./assets/js/script.js" defer></script>
+  <script src="./assets/js/workout.js" defer></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
