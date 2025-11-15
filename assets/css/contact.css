@@ -188,6 +188,31 @@ main {
   line-height: 1.6;
 }
 
+/* Ensure message textarea background, text and placeholder are dark/white */
+.contact-form textarea,
+.form-group textarea,
+textarea.your-msg {
+  background: rgba(255, 255, 255, 0.03) !important;
+  color: var(--white) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Placeholder color */
+.contact-form textarea::placeholder,
+.form-group textarea::placeholder,
+textarea.your-msg::placeholder {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+/* Focus state (optional highlight) */
+.contact-form textarea:focus,
+.form-group textarea:focus,
+textarea.your-msg:focus {
+  background: rgba(255, 71, 15, 0.03) !important;
+  border-color: var(--coquelicot) !important;
+  box-shadow: 0 0 0 3px rgba(255, 71, 15, 0.1) !important;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
