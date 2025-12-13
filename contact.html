@@ -6,20 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us - Fitlife</title>
 
-  <!-- 
-    - favicon
-  -->
+  
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
-  <!-- 
-    - custom css link
-  -->
+  
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/contact.css">
 
-  <!-- 
-    - google font link
-  -->
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -30,9 +24,7 @@
 </head>
 
 <body id="top">
-  <!-- 
-    - #HEADER
-  -->
+  
   <header class="header" data-header>
     <div class="container">
 
@@ -180,9 +172,7 @@
   </main>
 
     <section class="contact-section">
-  <!-- 
-    - #FOOTER
-  -->
+
   
   <footer class="footer">
     <div class="container">
@@ -249,36 +239,30 @@
 
       <div class="footer-bottom">
         <p class="copyright">
-          &copy; 2025 dalmat. All rights reserved.
+          &copy; 2025 Mergim. All rights reserved.
         </p>
       </div>
     </div>
   </footer>
 
-  <!-- 
-    - #BACK TO TOP
-  -->
+  
   <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
     <ion-icon name="arrow-up-outline" aria-hidden="true"></ion-icon>
   </a>
 
-  <!-- 
-    - custom js link
-  -->
+  
   <script src="./assets/js/script.js"></script>
 
-  <!-- 
-    - ionicon link
-  -->
+ 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
   <script>
-    // Form submission handler
+    
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
       
-      // Show success message
+      
       const form = this;
       const successMessage = document.createElement('div');
       successMessage.className = 'alert alert-success';
@@ -294,7 +278,7 @@
       
       form.reset();
       
-      // Remove success message after 5 seconds
+      
       setTimeout(() => {
         successMessage.remove();
       }, 5000);
