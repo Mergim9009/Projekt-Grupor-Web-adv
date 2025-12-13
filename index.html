@@ -13,6 +13,11 @@
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
   <!-- 
+    - bootstrap css
+  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- 
     - custom css link
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
@@ -43,62 +48,46 @@
     - #HEADER
   -->
 
-  <header class="header" data-header>
+  <!-- Bootstrap Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
-
-      <a href="#" class="logo">
-        <ion-icon name="barbell-sharp" aria-hidden="true"></ion-icon>
-
-        <span class="span">Fitlife</span>
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <ion-icon name="barbell-sharp" class="me-2"></ion-icon>
+        <span>Fitlife</span>
       </a>
-
-      <nav class="navbar" data-navbar>
-
-        <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
-          <ion-icon name="close-sharp" aria-hidden="true"></ion-icon>
-        </button>
-
-        <ul class="navbar-list">
-
-          <li>
-            <a href="#home" class="navbar-link active" data-nav-link>Home</a>
-          </li>
-
-          <li>
-            <a href="#about" class="navbar-link" data-nav-link>About Us</a>
-          </li>
-
-          <li>
-            <a href="classes.html" class="navbar-link" data-nav-link>Classes</a>
-          </li>
-
-          <li>
-            <a href="workout.html" class="navbar-link" data-nav-link>Workout Maker</a>
-          </li>
-
-          <li>
-            <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
-          </li>
-
-          <li>
-            <a href="contact.html" class="navbar-link" data-nav-link>Contact Us</a>
-          </li>
-
-        </ul>
-
-      </nav>
-
-      <a href="signup.html" class="btn btn-secondary">Join Now</a>
-
-      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
-        <span class="line"></span>
-        <span class="line"></span>
-        <span class="line"></span>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="classes.html">Classes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="workout.html">Workout Maker</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#blog">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+        <div class="d-flex">
+          <a href="signup.html" class="btn btn-outline-light">Join Now</a>
+        </div>
+      </div>
     </div>
-  </header>
-
+  </nav>
 
 
 
@@ -410,40 +399,45 @@
         </ul>
 
         <ul class="footer-list">
-
           <li>
             <p class="footer-list-title has-before">Our Newsletter</p>
           </li>
-
           <li>
-            <form action="" class="footer-form">
-              <input type="email" name="email_address" aria-label="email" placeholder="Email Address" required
-                class="input-field">
-
-              <button type="submit" class="btn btn-primary" aria-label="Submit">
-                <ion-icon name="chevron-forward-sharp" aria-hidden="true"></ion-icon>
-              </button>
+            <form class="needs-validation" novalidate>
+              <div class="input-group">
+                <input 
+                  type="email" 
+                  class="form-control" 
+                  placeholder="Enter your email" 
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                  required>
+                <button class="btn btn-primary" type="submit">
+                  <ion-icon name="chevron-forward-sharp"></ion-icon>
+                </button>
+                <div class="invalid-feedback">
+                  Please enter a valid email (e.g., example@domain.com)
+                </div>
+              </div>
             </form>
           </li>
-
           <li>
             <ul class="social-list">
 
               <li>
-                <a href="#" class="social-link">
+                <a href="https://www.facebook.com/" class="social-link" target="_blank" rel="noopener noreferrer">
                   <ion-icon name="logo-facebook"></ion-icon>
                 </a>
               </li>
 
               <li>
-                <a href="#" class="social-link">
+                <a href="https://www.instagram.com/" class="social-link" target="_blank" rel="noopener noreferrer">
                   <ion-icon name="logo-instagram"></ion-icon>
                 </a>
               </li>
 
               <li>
-                <a href="#" class="social-link">
-                  <ion-icon name="logo-twitter"></ion-icon>
+                <a href="https://github.com/" class="social-link" target="_blank" rel="noopener noreferrer">
+                  <ion-icon name="logo-github"></ion-icon>
                 </a>
               </li>
 
@@ -528,6 +522,33 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- 
+    - bootstrap js bundle with popper
+  -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Form Validation Script -->
+  <script>
+    // Form validation
+    (function () {
+      'use strict'
+      
+      // Fetch all forms that need validation
+      const forms = document.querySelectorAll('.needs-validation')
+      
+      // Loop over them and prevent submission
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+  </script>
 
 </body>
 
